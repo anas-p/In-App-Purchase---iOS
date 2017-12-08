@@ -1,7 +1,7 @@
 # In-App Purchase - iOS
 A simple In-App Purchase example that handles an In-App purchase, and restoring a product.
 
-Make sure to read [Apple's In-App Purchase documentation](https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/Introduction.html) and Use a Sandbox test user to test IAP, not your actual App store credentials. 
+Make sure to read [Apple's In-App Purchase documentation](https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/Introduction.html) and use a sandbox test user to test in-app purchase, not your actual App store credentials. 
 
 Test In-App Purchase on device, since it does not work on the iOS Simulator.
 
