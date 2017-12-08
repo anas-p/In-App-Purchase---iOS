@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="LoaderView" id="iN0-l3-epB" customClass="LoaderView" customModule="IAP_Sample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-hb-vhD">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="a1f-TG-LjA"/>
+                        <constraint firstAttribute="width" constant="37" id="hCN-pB-r62"/>
+                    </constraints>
+                    <color key="color" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchasing..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOc-Jn-g5H">
+                    <rect key="frame" x="130" y="360" width="115" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="awr-UZ-lIW"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="z4p-q6-ZYq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="eOc-Jn-g5H" firstAttribute="top" secondItem="Iit-hb-vhD" secondAttribute="bottom" constant="8" id="0Nw-qW-eCn"/>
+                <constraint firstItem="Iit-hb-vhD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GjY-sP-STT"/>
+                <constraint firstItem="Iit-hb-vhD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hNx-hM-pVZ"/>
+                <constraint firstItem="eOc-Jn-g5H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pKF-F8-hCv"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblLoaderTitle" destination="eOc-Jn-g5H" id="JJU-vG-HsE"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
