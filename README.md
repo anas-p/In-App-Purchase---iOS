@@ -1,2 +1,4 @@
-# In-App-Purchase - iOS
-A sample project for Purchase and Restore In App Purchase
+# In-App Purchase - iOS
+Sample project for In-App Purchase and Restore
+
+![](https://github.com/anasamanp/In-App-Purchase---iOS/blob/master/PurchaseVideo.gif)
