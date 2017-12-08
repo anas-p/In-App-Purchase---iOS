@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26AC38541FDAA26100FDEC16 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 26AC38531FDAA26100FDEC16 /* README.md */; };
 		26C4F3E51FDA599000674423 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4F3E41FDA599000674423 /* AppDelegate.swift */; };
 		26C4F3E71FDA599000674423 /* IAPurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4F3E61FDA599000674423 /* IAPurchaseViewController.swift */; };
 		26C4F3EA1FDA599000674423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26C4F3E81FDA599000674423 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26AC38531FDAA26100FDEC16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26C4F3E11FDA599000674423 /* IAP_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAP_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26C4F3E41FDA599000674423 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26C4F3E61FDA599000674423 /* IAPurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPurchaseViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				26C4F3F01FDA599000674423 /* Info.plist */,
 				26C4F3FB1FDA5F6900674423 /* Utilities.swift */,
 				26AC38521FDAA22E00FDEC16 /* Loader */,
-				26AC38531FDAA26100FDEC16 /* README.md */,
 			);
 			path = IAP_Sample;
 			sourceTree = "<group>";
@@ -162,7 +159,6 @@
 			files = (
 				26C4F3EF1FDA599000674423 /* LaunchScreen.storyboard in Resources */,
 				26C4F3FE1FDA732500674423 /* LoaderView.xib in Resources */,
-				26AC38541FDAA26100FDEC16 /* README.md in Resources */,
 				26C4F3EC1FDA599000674423 /* Assets.xcassets in Resources */,
 				26C4F3EA1FDA599000674423 /* Main.storyboard in Resources */,
 			);
@@ -321,7 +317,7 @@
 				INFOPLIST_FILE = IAP_Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nfnlabs.SMS-Filter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.IAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9ffcd32a-0664-472a-ae72-03f36282c38d";
 				PROVISIONING_PROFILE_SPECIFIER = SMSFilter_Dev;
@@ -340,7 +336,7 @@
 				INFOPLIST_FILE = IAP_Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nfnlabs.SMS-Filter";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.IAP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0cb10316-4b38-46ee-ac62-e0fd4fdd995b";
 				PROVISIONING_PROFILE_SPECIFIER = SMSFilter_AdHoc;

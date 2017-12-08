@@ -12,7 +12,7 @@ import StoreKit
 class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     var PRODUCT_ID =  "com.xxx.IAP_sample" //Get it from iTunes connect
-    var SHARED_SECRET = "eaexxxxxxxxxxxxxxxcfr45" //Get it from iTunes connect
+    var SHARED_SECRET = "ff5a4xxxxxxxxxxxxx054e82c" //Get it from iTunes connect
     
     var productID = ""
     var productsRequest = SKProductsRequest()
