@@ -4,8 +4,10 @@ Make sure to read [Apple's IAP documentation](https://developer.apple.com/librar
 Use a Sandbox test user to test IAP, not your actual App store credentials.
 
 ## Preview
+##### Purchase
 ![](https://github.com/anasamanp/In-App-Purchase---iOS/blob/master/PurchaseVideo.gif)  
 
+##### Restore
 ![](https://github.com/anasamanp/In-App-Purchase---iOS/blob/master/RestoreVideo.gif)
 
 
