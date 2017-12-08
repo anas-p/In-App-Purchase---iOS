@@ -13,7 +13,7 @@ Test In-App Purchase on device, since it does not work on the iOS Simulator.
 ![](https://github.com/anasamanp/In-App-Purchase---iOS/blob/master/RestoreVideo.gif)
 
 
-Have to follow these steps to enable In-App Purchase:
+Follow these steps to enable In-App Purchase:
 
 
 - The Certificates, Identifiers & Profiles section of Apple Developer Account is used to configure your App ID and Provisioning Profiles for in-app purchase.
