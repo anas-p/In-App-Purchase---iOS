@@ -10,8 +10,7 @@ import UIKit
 import StoreKit
 
 class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    
-    var PRODUCT_ID =  "com.xxx.IAP_sample" //Get it from iTunes connect
+    var PRODUCT_ID = "com.xxx.IAP_sample" //Get it from iTunes connect
     var SHARED_SECRET = "ff5a4xxxxxxxxxxxxx054e82c" //Get it from iTunes connect
     
     var productID = ""
@@ -26,8 +25,8 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let isPurchased = UserDefaults.standard.value(forKey: "isPurchased") as? Bool, isPurchased == true{
-            //TODO:Product is purchased and make sure the functionality/availability of purchased product */
+        if let isPurchased = UserDefaults.standard.value(forKey: "isPurchased") as? Bool, isPurchased == true {
+            // TODO: Product is purchased and make sure the functionality/availability of purchased product
             lblPurchaseDone.isHidden = false
             self.btnPurchase.isHidden = true
             self.btnRestore.isHidden = true
@@ -45,12 +44,14 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
     }
     
     // MARK: - Fetch all available IAP products which is created in iTunes connect.
-    func fetchAvailableProducts()  {
+    func fetchAvailableProducts() {
         // Put here your IAP Products ID's
         let productIdentifiers = NSSet(objects:
             PRODUCT_ID
         )
-        productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
+        
+        guard let identifier = productIdentifiers as? Set<String> else { return }
+        productsRequest = SKProductsRequest(productIdentifiers: identifier)
         productsRequest.delegate = self
         productsRequest.start()
     }
@@ -68,7 +69,7 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
     
     func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         hideLoader()
-        //TODO: Product is restored and make sure the functionality/availability of purchased product */
+        // TODO: Product is restored and make sure the functionality/availability of purchased product
         UserDefaults.standard.set(true, forKey: "isPurchased")
         lblPurchaseDone.text = "Pro Version Restored."
         lblPurchaseDone.isHidden = false
@@ -78,7 +79,7 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
     }
     
     // MARK: - Make purchase of a product
-    func canMakePurchases() -> Bool {  return SKPaymentQueue.canMakePayments()  }
+    func canMakePurchases() -> Bool { return SKPaymentQueue.canMakePayments() }
     
     func purchaseProduct(product: SKProduct) {
         if self.canMakePurchases() {
@@ -96,7 +97,7 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
     }
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count > 0{
+        if response.products.count > 0 {
             iapProducts = response.products
             let purchasingProduct = response.products[0] as SKProduct
             
@@ -110,7 +111,6 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
             // Show description
             btnPurchase.setTitle("Get " + purchasingProduct.localizedDescription + " for \(price!)", for: .normal)
         }
-        
     }
     
     // MARK: - IAP payment queue
@@ -120,7 +120,11 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
                 switch trans.transactionState {
                 case .purchased:
                     hideLoader()
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    
+                    if let paymentTransaction = transaction as? SKPaymentTransaction {
+                        SKPaymentQueue.default().finishTransaction(paymentTransaction)
+                    }
+                    
                     if productID == PRODUCT_ID {
                         UserDefaults.standard.set(true, forKey: "isPurchased")
                         lblPurchaseDone.text = "Pro version PURCHASED!"
@@ -131,7 +135,7 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
                     }
                 case .failed:
                     hideLoader()
-                    if trans.error != nil{
+                    if trans.error != nil {
                         self.present(Utilities().showAlertContrller(title: "Purchase failed!", message: trans.error!.localizedDescription), animated: true, completion: nil)
                         print(trans.error!)
                     }
@@ -145,19 +149,18 @@ class IAPurchaseViewController: UIViewController, SKProductsRequestDelegate, SKP
         }
     }
     
-    //MARK: - Show / Hide loader for purchase and restore
-    func showLoaderView(with title:String){
+    // MARK: - Show / Hide loader for purchase and restore
+    func showLoaderView(with title:String) {
         loaderView = LoaderView.instanceFromNib()
         loaderView?.lblLoaderTitle.text = title
         loaderView?.frame = self.view.frame
         self.view.addSubview(loaderView!)
     }
     
-    func hideLoader(){
-        if loaderView != nil{
+    func hideLoader() {
+        if loaderView != nil {
             loaderView?.removeFromSuperview()
         }
     }
-    
 }
 

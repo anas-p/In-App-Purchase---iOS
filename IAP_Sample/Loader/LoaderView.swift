@@ -10,11 +10,9 @@ import UIKit
 
 class LoaderView: UIView {
 
-    class func instanceFromNib() -> LoaderView
-    {
+    class func instanceFromNib() -> LoaderView {
         return UINib(nibName: "LoaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! LoaderView
     }
     
     @IBOutlet weak var lblLoaderTitle: UILabel!
-
 }
